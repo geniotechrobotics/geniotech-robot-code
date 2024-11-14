@@ -56,6 +56,7 @@ public class Controller extends OpMode {
         }
 
         if(gamepad2.y) {
+            //move to 90 degrees
             leftservo.setPosition(0.5);
         } else if (gamepad2.a) {
             leftservo.setPosition(leftservo.getPosition()-0.001);
@@ -64,7 +65,7 @@ public class Controller extends OpMode {
             leftservo.setPosition(leftservo.getPosition()+0.001);
             gamepad2.b=false;
         }else if (gamepad2.x) {
-            // move to 180 degrees.
+            // move to 180 degrees
             leftservo.setPosition(1);
         }
     }
