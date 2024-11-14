@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>TeleopProgram.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TeleopProgram.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org</span><span class="s2">.</span><span class="s1">firstinspires</span><span class="s2">.</span><span class="s1">ftc</span><span class="s2">.</span><span class="s1">teamcode</span><span class="s2">.</span><span class="s1">Teleop</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">qualcomm</span><span class="s2">.</span><span class="s1">robotcore</span><span class="s2">.</span><span class="s1">eventloop</span><span class="s2">.</span><span class="s1">opmode</span><span class="s2">.</span><span class="s1">OpMode</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">qualcomm</span><span class="s2">.</span><span class="s1">robotcore</span><span class="s2">.</span><span class="s1">hardware</span><span class="s2">.</span><span class="s1">DcMotor</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">TeleopProgram </span><span class="s0">extends </span><span class="s1">OpMode </span><span class="s2">{</span>
+
+    <span class="s1">DcMotor motor0</span><span class="s2">;</span>
+    <span class="s1">DcMotor motor1</span><span class="s2">;</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">init</span><span class="s2">() {</span>
+        <span class="s1">telemetry</span><span class="s2">.</span><span class="s1">addData</span><span class="s2">(</span><span class="s3">&quot;Initialization&quot;</span><span class="s2">, </span><span class="s3">&quot;is a success&quot;</span><span class="s2">);</span>
+        <span class="s1">telemetry</span><span class="s2">.</span><span class="s1">update</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">loop</span><span class="s2">() {</span>
+
+        <span class="s4">/*motor0.setPower(0.5); 
+        motor1.setPower(0.5); 
+        wait(1000); 
+        motor0.setPower(0); 
+        motor1.setPower(0);*/</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">gamepad1</span><span class="s2">.</span><span class="s1">a</span><span class="s2">){</span>
+            <span class="s1">motor0</span><span class="s2">.</span><span class="s1">setPower</span><span class="s2">(</span><span class="s5">0.5</span><span class="s2">);</span>
+            <span class="s1">motor1</span><span class="s2">.</span><span class="s1">setPower</span><span class="s2">(</span><span class="s5">0.5</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
