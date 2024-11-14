@@ -29,9 +29,8 @@ public class Controller extends OpMode {
         float steering = gamepad1.left_stick_x;
         float forward = gamepad1.right_trigger;
         float reverse = gamepad1.left_trigger;
+        float armPower = gamepad2.left_stick_y;
         boolean handbrake = gamepad1.right_bumper;
-        boolean armUp = gamepad2.dpad_up;
-        boolean armDown = gamepad2.dpad_down;
 
         if (forward > 0) {
             leftWheel.setPower(forward);
@@ -50,10 +49,8 @@ public class Controller extends OpMode {
             rightWheel.setPower(0);
         }
 
-        if (armUp) {
-            armMotor.setPower(0.2);
-        } else if (armDown) {
-            armMotor.setPower(-0.2);
+        if (armPower > 0 || armPower < 0) {
+            armMotor.setPower(armPower);
         } else {
             armMotor.setPower(0);
         }
