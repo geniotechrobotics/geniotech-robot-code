@@ -16,16 +16,17 @@ public class Controller extends OpMode {
     Servo rightservo;
 
     @Override
-    public  void init() {
+    public void init() {
         leftWheel = hardwareMap.dcMotor.get("motor0");
         rightWheel = hardwareMap.dcMotor.get("motor1");
         armMotor = hardwareMap.dcMotor.get("motor2");
         leftservo = hardwareMap.servo.get("servo0");
         rightservo = hardwareMap.servo.get("servo1");
+
     }
 
     @Override
-    public void  loop() {
+    public void loop() {
         float steering = gamepad1.left_stick_x;
         float forward = gamepad1.right_trigger;
         float reverse = gamepad1.left_trigger;
@@ -50,23 +51,23 @@ public class Controller extends OpMode {
         }
 
         if (armPower > 0 || armPower < 0) {
-            armMotor.setPower(armPower);
+            armMotor.setPower(armPower/3);
         } else {
             armMotor.setPower(0);
         }
 
-        if(gamepad2.y) {
+        if (gamepad2.y) {
             //move to 90 degrees
             leftservo.setPosition(0.5);
         } else if (gamepad2.a) {
-            leftservo.setPosition(leftservo.getPosition()-0.001);
-            gamepad2.a=false;
+            leftservo.setPosition(leftservo.getPosition() - 0.001);
+            gamepad2.a = false;
         } else if (gamepad2.b) {
-            leftservo.setPosition(leftservo.getPosition()+0.001);
-            gamepad2.b=false;
-        }else if (gamepad2.x) {
+            leftservo.setPosition(leftservo.getPosition() + 0.001);
+            gamepad2.b = false;
+        } else if (gamepad2.x) {
             // move to 180 degrees
-            leftservo.setPosition(1);
+            leftservo.setPosition(0.75);
         }
     }
 }
